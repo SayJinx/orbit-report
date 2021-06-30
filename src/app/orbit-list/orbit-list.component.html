@@ -7,7 +7,11 @@
       <th>Orbit Type</th>
       <th>Launch Date</th>
    </tr>
-   <tr *ngFor="let Satellite of satellites">
-       {{satellites.name}}
+   <tr *ngFor="let sourceList of satellites">
+    {{sourceList.name}}
+    {{sourceList.type}}
+    {{sourceList.operational}}
+    {{sourceList.orbitType}}
+    {{sourceList.launchDate}}
     </tr>
 </table>
