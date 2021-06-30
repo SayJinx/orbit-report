@@ -14,4 +14,12 @@ export class Satellite {
         this.operational = operational;
     }
 
+    showWarning = false
+
+    shouldShowWarning() {
+        if(this.type.toUpperCase() === "SPACE DEBRIS") {
+            this.showWarning = true
+        }
+        console.log(this.showWarning)
+    }
 }
