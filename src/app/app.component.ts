@@ -45,6 +45,8 @@ export class AppComponent {
 
 }
 
+//TRIED TO INSERT CODE FROM 8.6 HERE. Cause my computer to freeze up when I tried to ng serve. For a brief second I got an error for excessive recursion.
+
 /*search(searchTerm: string): void {
   let matchingSatellites: Satellite[] = [];
   searchTerm = searchTerm.toLowerCase();
