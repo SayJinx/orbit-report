@@ -30,24 +30,31 @@ export class AppComponent {
      response.json().then(function(data) {
 
         let fetchedSatellites = data.satellites;
+        console.log(fetchedSatellites)
+//        this.sourceList=fetchedSatellites
         // TODO: loop over satellites
-        for (let i = 0; i < fetchedSatellites.length; i++) {
+       for (let i = 0; i < fetchedSatellites.length; i++) {
           console.log(fetchedSatellites.length)
           this.sourceList.push(new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational));
 
           
         }
+      // make a copy of the sourceList to be shown to the user
+      this.displayList = this.sourceList.slice(0);
+   }.bind(this));
+}.bind(this));
+                 
         // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
         // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
-        return this.sourceList;
-     }.bind(this));
-  }.bind(this));
+        //return this.sourceList;
+/*     }.bind(this));
+  }.bind(this));*/
 
 }
 
 //TRIED TO INSERT CODE FROM 8.6 HERE. Cause my computer to freeze up when I tried to ng serve. For a brief second I got an error for excessive recursion.
 
-/*search(searchTerm: string): void {
+search(searchTerm: string): void {
   let matchingSatellites: Satellite[] = [];
   searchTerm = searchTerm.toLowerCase();
   for(let i=0; i < this.sourceList.length; i++) {
@@ -59,6 +66,6 @@ export class AppComponent {
   // assign this.displayList to be the array of matching satellites
   // this will cause Angular to re-make the table, but now only containing matches
   this.displayList = matchingSatellites;
-}*/
+}
 
 }

@@ -1,6 +1,6 @@
 <h3>Orbit Report</h3>
 <!-- As part of the issues I'm having with 8.6, was unable to determine where the below needs to go. -->
-<!-- app-orbit-list [satellites]="displayList"></app-orbit-list -->
+<app-orbit-list [satellites]="displayList"></app-orbit-list>
 <table>
    <tr class="header-row">
       <th class="sortable" (click)="sort('name')">Name</th>
@@ -13,16 +13,16 @@
     <td>
        {{sourceList.name}}
    </td>
-      <td [class.td-style]="sourceList.showWarning()">
+      <td [class.warning]="sourceList.showWarning()">
          {{sourceList.type}}
       </td>
-      <td id="satOp">
+      <td>
        {{sourceList.operational}}
       </td>
-      <td id="satOrb">
+      <td>
        {{sourceList.orbitType}}
       </td>
-      <td id="satLaunch">
+      <td>
        {{sourceList.launchDate}}
       </td>
     </tr>
